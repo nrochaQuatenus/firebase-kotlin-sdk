@@ -44,7 +44,8 @@ tasks {
             "firebase-database:updateVersion", "firebase-database:updateDependencyVersion",
             "firebase-firestore:updateVersion", "firebase-firestore:updateDependencyVersion",
             "firebase-functions:updateVersion", "firebase-functions:updateDependencyVersion",
-            "firebase-config:updateVersion", "firebase-config:updateDependencyVersion"
+            "firebase-config:updateVersion", "firebase-config:updateDependencyVersion",
+            "firebase-storage:updateVersion", "firebase-storage:updateDependencyVersion",
         )
     }
 }
