@@ -402,9 +402,11 @@ actual class SnapshotMetadata(val ios: FIRSnapshotMetadata) {
     actual val isFromCache: Boolean get() = ios.fromCache
 }
 
-actual class FieldPath private constructor(val ios: FIRFieldPath) {
+actual class FieldPath(val ios: FIRFieldPath) {
     actual constructor(vararg fieldNames: String) : this(FIRFieldPath(fieldNames.asList()))
-    actual val documentId: FieldPath get() = FieldPath(FIRFieldPath.documentID())
+    actual companion object {
+        actual val documentId: FieldPath get() = FieldPath(FIRFieldPath.documentID())
+    }
 }
 
 actual object FieldValue {

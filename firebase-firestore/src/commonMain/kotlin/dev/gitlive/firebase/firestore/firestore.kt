@@ -214,7 +214,9 @@ expect class SnapshotMetadata {
 }
 
 expect class FieldPath(vararg fieldNames: String) {
-    val documentId: FieldPath
+    companion object{
+        val documentId: FieldPath
+    }
 }
 
 expect object FieldValue {

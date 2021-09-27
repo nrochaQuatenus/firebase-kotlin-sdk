@@ -416,11 +416,13 @@ actual class SnapshotMetadata(val js: firebase.firestore.SnapshotMetadata) {
     actual val isFromCache: Boolean get() = js.fromCache
 }
 
-actual class FieldPath private constructor(val js: firebase.firestore.FieldPath) {
+actual class FieldPath(val js: firebase.firestore.FieldPath) {
     actual constructor(vararg fieldNames: String) : this(dev.gitlive.firebase.firestore.rethrow {
         js("Reflect").construct(firebase.firestore.FieldPath, fieldNames).unsafeCast<firebase.firestore.FieldPath>()
     })
-    actual val documentId: FieldPath get() = FieldPath(firebase.firestore.FieldPath.documentId)
+    actual companion object {
+        actual val documentId: FieldPath get() = FieldPath(firebase.firestore.FieldPath.documentId)
+    }
 }
 
 actual object FieldValue {
